@@ -5,9 +5,20 @@ import { useToast ,Textarea,Button} from '@chakra-ui/react'
 function InputText() {
 
     const [text,setText] = useState('')
-
+    const toast = useToast()
     const submitText = ()=>{
-        console.log(text)
+
+        if(text == ''){
+            toast({
+                title:'Text is empty ',
+                description:'please enter some text to extract keyword',
+                status:'error',
+                duration:5000,
+                isClosable:false
+            })
+        }else{
+            console.log(Text)
+        }
     }
 
 
@@ -25,7 +36,7 @@ function InputText() {
         onChange={(e)=> setText(e.target.value)}
          />
 
-    <Button bg='blue.500' color='white' marginTop={4} width='100%' _hover={{bg: 'blue.700'}} onClick={submitText}> enter here</Button>
+    <Button bg='blue.500' color='white' marginTop={4} width='100%' _hover={{bg: 'blue.700'}} onClick={submitText}> Extract keyword </Button>
     </>
   )
 }

@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { Heading,Image,Text } from '@chakra-ui/react'
-import logo from './assets/logo.svg'
+import logo from './../assets/logo.svg'
 
 
 

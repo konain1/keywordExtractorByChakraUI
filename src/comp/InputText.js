@@ -2,13 +2,13 @@ import React from 'react'
 import { useState } from 'react'
 import { useToast ,Textarea,Button} from '@chakra-ui/react'
 
-function InputText() {
+function InputText({ extractKeyword}) {
 
     const [text,setText] = useState('')
     const toast = useToast()
     const submitText = ()=>{
 
-        if(text == ''){
+        if(text === ''){
             toast({
                 title:'Text is empty ',
                 description:'please enter some text to extract keyword',
@@ -17,7 +17,8 @@ function InputText() {
                 isClosable:false
             })
         }else{
-            console.log(Text)
+            // console.log(text)
+            extractKeyword(text)
         }
     }
 
